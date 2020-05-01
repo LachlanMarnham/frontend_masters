@@ -20,6 +20,25 @@ def cross_add(input_vals: List[int]) -> List[int]:
     return result
 
 
+def find(needle: int, haystack: List[int]) -> bool:
+    """ `in` alias, returns True if needle is an element of haystack, otherwise returns False.
+    
+        Examples:
+            (1, [1, 2, 3]) -> True
+            (4, [5, 6, 7]) -> False
+        
+        Complexity: O(n)
+    """
+    for item in haystack:
+        if item == needle:
+            return True
+    
+    return False
+
+
 if __name__ == '__main__':
     assert cross_add([1, 2, 3]) == [4, 4 ,4]
     assert cross_add([3, 4, 7, 13]) == [16, 11, 11, 16]
+    
+    assert find(1, [1, 2, 3])
+    assert not find(4, [5, 6, 7])

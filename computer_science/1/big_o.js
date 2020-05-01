@@ -39,6 +39,29 @@ function arraysEqual(arr_1, arr_2) {
 }
 
 
+function find(needle, haystack) {
+    /* Returns true if needle is an element of haystack, otherwise returns false.
+
+        Examples:
+            (1, [1, 2, 3]) -> true
+            (4, [5, 6, 7]) -> false
+        
+        Complexity: O(n)
+    */
+    for (let i = 0; i < haystack.length; i++) {
+        if (haystack[i] === needle) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
 if (require.main === module) {
     assert(arraysEqual(crossAdd([1, 2, 3]), [4, 4, 4]));
+    assert(arraysEqual(crossAdd([3, 4, 7, 13]), [16, 11, 11, 16]));
+
+    assert(find(1, [1, 2, 3]) === true);
+    assert(find(4, [5, 6, 7]) === false);
 }
