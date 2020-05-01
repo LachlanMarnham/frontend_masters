@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 
 
 def cross_add(input_vals: List[int]) -> List[int]:
@@ -36,9 +36,29 @@ def find(needle: int, haystack: List[int]) -> bool:
     return False
 
 
+def make_tuples(input_vals: Tuple[int]) -> List[Tuple[int, int]]:
+    """ Computes the Cartesian product of Input_vals with itself
+
+        Example:
+            (1, 2) -> [(1, 1), (1, 2), (2, 1), (2, 2)]
+        
+        Complexity: O(n^2)
+    """
+    result = []
+
+    for first_element in input_vals:
+        for second_element in input_vals:
+            new_tuple = (first_element, second_element)
+            result.append(new_tuple)
+    
+    return result
+
+
 if __name__ == '__main__':
     assert cross_add([1, 2, 3]) == [4, 4 ,4]
     assert cross_add([3, 4, 7, 13]) == [16, 11, 11, 16]
     
     assert find(1, [1, 2, 3])
     assert not find(4, [5, 6, 7])
+
+    assert make_tuples((1, 2)) == [(1, 1), (1, 2), (2, 1), (2, 2)]
