@@ -1,2 +1,3 @@
 Recommended textbook:  Cormen's Intro to Algorithms 
 
+Unless specified otherwise, assume worst case
