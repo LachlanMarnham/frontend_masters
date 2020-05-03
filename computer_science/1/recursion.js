@@ -17,8 +17,28 @@ function basicRecursion(current, max) {
 }
 
 
+function fibonacci(n) {
+    /*  Calculates the nth Fibonacci number
+
+    Examples:
+        1 -> 1
+        2 -> 1
+        6 -> 8
+    */
+   if (n <= 2) return 1;
+
+   return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+
 if (require.main === module) {
     basicRecursion(1, 1);  // 1
     basicRecursion(1, 5);  // 1, 2, 3, 4, 5
     basicRecursion(1, 0);  // ...
+
+    console.log(fibonacci(1));
+    console.log(fibonacci(2));
+    assert(fibonacci(1) === 1);
+    assert(fibonacci(2) === 1);
+    assert(fibonacci(6) === 8);
 }
