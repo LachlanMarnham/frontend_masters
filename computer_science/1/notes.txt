@@ -15,3 +15,5 @@ Time complexity of m singly-nested loops in series: O(n)
 when something is defined in terms of itself
 
 MS: fibonacci exercise
+
+MS: factorial

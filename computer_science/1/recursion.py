@@ -25,6 +25,19 @@ def fibonacci(n: int):
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 
+def factorial(n: int) -> int:
+    """ Computes n!
+    
+    Examples:
+        0 -> 1
+        1 -> 1
+        5 -> 120
+    """
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+
 if __name__ == '__main__':
     basic_recursion(1, 1)  # 1
     basic_recursion(1, 5)  # 1, 2, 3, 4, 5
@@ -32,3 +45,6 @@ if __name__ == '__main__':
 
     assert fibonacci(1) == fibonacci(2) == 1
     assert fibonacci(6) == 8
+
+    assert factorial(0) == factorial(1) == 1
+    assert factorial(5) == 120
