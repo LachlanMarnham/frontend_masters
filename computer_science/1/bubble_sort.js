@@ -3,6 +3,13 @@ var assert = require('assert');
 
 
 function bubbleSort(arr) {
+    /* Implementation of bubble sort algorithm
+
+       Examples:
+            bubbleSort([3, 2, 1]) -> [1, 2, 3]
+       Complexity: O(n^2)
+    */
+
     let n = arr.length;
     for (let i = 0; i <= n - 1; i++) {
         for (let j = 0; j <= n - i - 1; j++) {
